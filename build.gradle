@@ -1,0 +1,45 @@
+plugins {
+    id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'java'
+}
+
+version = mod_version
+group = 'cn.maidcompat'
+archivesBaseName = 'tlm-berry-harvest-compat'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+}
+
+repositories {
+    maven {
+        name = 'CurseMaven'
+        url = 'https://www.cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    compileOnly fg.deobf('curse.maven:touhou-little-maid-355044:8061847')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    finalizedBy 'reobfJar'
+    manifest {
+        attributes([
+            'Specification-Title': 'tlm_berry_harvest_compat',
+            'Specification-Vendor': 'maidcompat',
+            'Specification-Version': '1',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.jar.archiveVersion,
+            'Implementation-Vendor': 'maidcompat'
+        ])
+    }
+}

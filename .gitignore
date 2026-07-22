@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Local dependency jars
+libs/
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# Runtime
+run/
+logs/
+crash-reports/
+
+# OS
+.DS_Store
+Thumbs.db
