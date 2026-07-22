@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[46,)"
+license="MIT"
+
+[[mods]]
+modId="tlm_berry_harvest_compat"
+version="${file.jarVersion}"
+displayName="Touhou Little Maid Berry Harvest Compat"
+description="Adds right-click harvest support for berry-like crops to Touhou Little Maid farm mode."
+
+[[dependencies.tlm_berry_harvest_compat]]
+modId="forge"
+mandatory=true
+versionRange="[46,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tlm_berry_harvest_compat]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.tlm_berry_harvest_compat]]
+modId="touhou_little_maid"
+mandatory=true
+versionRange="[1.5.3-forge+mc1.20.1,)"
+ordering="AFTER"
+side="BOTH"
